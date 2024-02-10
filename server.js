@@ -14,7 +14,7 @@ const stripe = require("stripe")(api_key);
 
 // Setting up the static folder:
 // app.use(express.static(resolve(__dirname, "./client")));
-app.use(express.static(resolve(__dirname, staticDir)));
+app.use(express.static(resolve(__dirname, process.env.STATIC_DIR)));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
